@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AgencyApp.Models;
 using AgencyApp.DAL;
+using AgencyApp.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgencyApp.Controllers
 {
@@ -22,9 +24,17 @@ namespace AgencyApp.Controllers
         {
             ViewBag.SubPage = true;
 
+            HomeViewModel model = new HomeViewModel
+            {
+                Setting = _db.Settings.FirstOrDefault(),
+                About = _db.Abouts.FirstOrDefault(),
+                Blogs = _db.Blogs.OrderByDescending(b => b.Date).Take(3).ToList(),
+                Socials = _db.Socials.ToList(),
+                Portfolios = _db.Portfolios.Include(p=>p.PortfolioCategory).ToList(),
 
+            };
 
-            return View();
+            return View(model);
         }
        
     }

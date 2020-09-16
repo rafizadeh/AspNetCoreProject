@@ -23,8 +23,13 @@ using AgencyApp.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\User\Desktop\agency-asp-net-core\AgencyApp\Views\_ViewImports.cshtml"
+using AgencyApp.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"740acac93cf2e6da272d91bfaa089ae2d8d59798", @"/Views/Blog/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa7770d66295f0e974b3bb2586a154fc6f762f77", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7bc6e8de8d8c0207ba0156625fd6b041eeacc4d3", @"/Views/_ViewImports.cshtml")]
     public class Views_Blog_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
