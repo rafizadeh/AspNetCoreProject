@@ -14,10 +14,6 @@ namespace AgencyApp.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(200)]
-        public string Explanation { get; set; }
-
         public string Photo { get; set; }
 
         public int PortfolioCategoryId { get; set; }

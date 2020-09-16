@@ -17,6 +17,10 @@ namespace AgencyApp.Models
         public string Title { get; set; }
 
         [Required]
+        [StringLength(200)]
+        public string Slug { get; set; }
+
+        [Required]
         [StringLength(70)]
         public string Author { get; set; }
 
