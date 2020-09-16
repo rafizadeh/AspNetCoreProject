@@ -1,4 +1,15 @@
-﻿<!doctype html>
+﻿@{ 
+
+    bool navbar = false;
+
+    if (ViewBag.SubPage != null)
+    {
+        navbar = true;
+    }
+
+}
+
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -33,7 +44,7 @@
         <div class="loader"></div>
     </div>
 
-    <nav>
+    <nav class="@(!navbar?"subpage-nav":"")">
         <div class="row">
             <div class="container">
                 <div class="logo">
