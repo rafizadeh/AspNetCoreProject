@@ -20,6 +20,7 @@ namespace AgencyApp.Controllers
             _db = db;
         }
 
+
         public IActionResult Index()
         {
             ViewBag.SubPage = true;
@@ -30,8 +31,8 @@ namespace AgencyApp.Controllers
                 About = _db.Abouts.FirstOrDefault(),
                 Blogs = _db.Blogs.OrderByDescending(b => b.Date).Take(3).ToList(),
                 Socials = _db.Socials.ToList(),
-                Portfolios = _db.Portfolios.Include(p=>p.PortfolioCategory).ToList(),
-
+                PortfolioCategories = _db.PortfolioCategories.Include(p => p.Portfolios).ToList(),
+                Portfolios = _db.Portfolios.Include(p=>p.PortfolioCategory).ToList()
             };
 
             return View(model);

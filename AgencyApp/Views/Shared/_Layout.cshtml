@@ -52,11 +52,11 @@
                 </div>
                 <div class="responsive"><i data-icon="m" class="icon"></i></div>
                 <ul class="nav-menu">
-                    <li><a asp-controller="home" asp-action="index" class="smoothScroll">Home</a></li>
-                    <li><a href="#about" class="smoothScroll">About</a></li>
-                    <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-                    <li><a href="#blog" class="smoothScroll">Blog</a></li>
-                    <li><a href="#contact" class="smoothScroll">Contact</a></li>
+                    <li><a asp-controller="home" asp-action="index" data-href="#home" class="smoothScroll mainPage">Home</a></li>
+                    <li><a asp-controller="home" asp-action="index" data-href="#about" class="smoothScroll">About</a></li>
+                    <li><a asp-controller="home" asp-action="index"  data-href="#portfolio" class="smoothScroll">Portfolio</a></li>
+                    <li><a asp-controller="home" asp-action="index" data-href="#blog" class="smoothScroll">Blog</a></li>
+                    <li><a asp-controller="home" asp-action="index"  data-href="#contact" class="smoothScroll">Contact</a></li>
                 </ul>
             </div>
         </div>

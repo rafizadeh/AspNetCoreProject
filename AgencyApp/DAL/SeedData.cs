@@ -80,15 +80,18 @@ namespace AgencyApp.DAL
                 db.PortfolioCategories.AddRange(new[] {
                     new PortfolioCategory
                     {
-                        Name = "Web Design"
+                        Name = "Web Design",
+                        DataFilter = ".web-design"
                     },
                     new PortfolioCategory
                     {
-                        Name = "Development"
+                        Name = "Development",
+                        DataFilter = ".development"
                     },
                     new PortfolioCategory
                     {
-                        Name = "Applications"
+                        Name = "Applications",
+                        DataFilter = ".application"
                     }
                 });
 

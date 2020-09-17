@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AgencyApp.DAL;
+using AgencyApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgencyApp.Controllers
@@ -19,12 +20,23 @@ namespace AgencyApp.Controllers
         [Route("our-blogs")]
         public IActionResult Index()
         {
-            return View();
+            List<Blog> blogs = _db.Blogs.OrderByDescending(b => b.Date).ToList();
+
+            return View(blogs);
         }
 
-        public IActionResult Detail()
+        [Route("blog/{slug}")]
+        public IActionResult Detail(string slug)
         {
-            return View();
+            if (string.IsNullOrEmpty(slug))
+            {
+                return NotFound();
+            }
+
+            Blog blog = _db.Blogs.FirstOrDefault(b => b.Slug == slug);
+
+
+            return View(blog);
         }
     }
 }

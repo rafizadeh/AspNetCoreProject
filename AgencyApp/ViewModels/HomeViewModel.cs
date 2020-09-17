@@ -8,6 +8,7 @@ namespace AgencyApp.ViewModels
 {
     public class HomeViewModel
     {
+
         public Setting Setting { get; set; }
 
         public About About { get; set; }

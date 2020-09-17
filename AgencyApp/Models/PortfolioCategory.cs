@@ -14,6 +14,10 @@ namespace AgencyApp.Models
         [StringLength(100)]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(100)]
+        public string DataFilter { get; set; }
+
         public List<Portfolio> Portfolios { get; set; }
     }
 }
