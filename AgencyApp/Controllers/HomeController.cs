@@ -34,7 +34,7 @@ namespace AgencyApp.Controllers
                 PortfolioCategories = _db.PortfolioCategories.Include(p => p.Portfolios).ToList(),
                 Portfolios = _db.Portfolios.Include(p=>p.PortfolioCategory).ToList()
             };
-
+            
             return View(model);
         }
        

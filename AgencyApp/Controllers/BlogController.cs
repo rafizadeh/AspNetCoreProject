@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AgencyApp.DAL;
 using AgencyApp.Models;
+using AgencyApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgencyApp.Controllers
 {
@@ -20,6 +22,7 @@ namespace AgencyApp.Controllers
         [Route("our-blogs")]
         public IActionResult Index()
         {
+
             List<Blog> blogs = _db.Blogs.OrderByDescending(b => b.Date).ToList();
 
             return View(blogs);

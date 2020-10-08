@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@*@model HomeViewModel*@
+@{
 
     bool navbar = false;
 
@@ -54,9 +55,9 @@
                 <ul class="nav-menu">
                     <li><a asp-controller="home" asp-action="index" data-href="#home" class="smoothScroll mainPage">Home</a></li>
                     <li><a asp-controller="home" asp-action="index" data-href="#about" class="smoothScroll">About</a></li>
-                    <li><a asp-controller="home" asp-action="index"  data-href="#portfolio" class="smoothScroll">Portfolio</a></li>
+                    <li><a asp-controller="home" asp-action="index" data-href="#portfolio" class="smoothScroll">Portfolio</a></li>
                     <li><a asp-controller="home" asp-action="index" data-href="#blog" class="smoothScroll">Blog</a></li>
-                    <li><a asp-controller="home" asp-action="index"  data-href="#contact" class="smoothScroll">Contact</a></li>
+                    <li><a asp-controller="home" asp-action="index" data-href="#contact" class="smoothScroll">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -65,7 +66,11 @@
     <footer>
         <div class="container">
             <div class="social">
-                <a href="#">facebook </a>
+                @*@foreach (var social in Model.Socials)
+                {
+                    <a href="#">@social.Name</a>
+
+                }*@
                 <a href="#">twitter </a>
                 <a href="#">instagram </a>
                 <a href="#">google plus </a>
