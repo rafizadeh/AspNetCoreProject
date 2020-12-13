@@ -1,4 +1,5 @@
-﻿using AgencyApp.Models;
+﻿using AgencyApp.Areas.Admin.Models;
+using AgencyApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -24,5 +25,7 @@ namespace AgencyApp.DAL
         public DbSet<Setting> Settings { get; set; }
 
         public DbSet<Social> Socials { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
     }
 }

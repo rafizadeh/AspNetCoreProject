@@ -17,8 +17,6 @@ namespace AgencyApp.Controllers
         {
             _db = db;
         }
-
-
         [Route("our-blogs")]
         public IActionResult Index()
         {
@@ -37,7 +35,6 @@ namespace AgencyApp.Controllers
             }
 
             Blog blog = _db.Blogs.FirstOrDefault(b => b.Slug == slug);
-
 
             return View(blog);
         }

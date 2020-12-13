@@ -20,7 +20,6 @@ namespace AgencyApp.Controllers
             _db = db;
         }
 
-
         public IActionResult Index()
         {
             ViewBag.SubPage = true;

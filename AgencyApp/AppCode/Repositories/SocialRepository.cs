@@ -12,7 +12,7 @@ namespace AgencyApp.AppCode.Repositories
     {
         public Social Create(Social entity)
         {
-            throw new NotImplementedException();\
+            throw new NotImplementedException();
         }
 
         public void Delete(Social entity)

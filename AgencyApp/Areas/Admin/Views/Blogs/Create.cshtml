@@ -1,0 +1,88 @@
+﻿@model AgencyApp.Models.Blog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Blog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" data-type = "slug-source" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Slug" class="control-label"></label>
+                <input asp-for="Slug" class="form-control" data-type = "slug-input" />
+                <span asp-validation-for="Slug" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo" class="control-label"></label>
+                <input asp-for="Photo" class="form-control" />
+                <span asp-validation-for="Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+
+    <script>
+        String.prototype.removeAcento = function () {
+            var text = this.toLowerCase();
+            text = text.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
+            text = text.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
+            text = text.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
+            text = text.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
+            text = text.replace(new RegExp('[ÚÙÛÜ]', 'gi'), 'u');
+            text = text.replace(new RegExp('[Ç]', 'gi'), 'c');
+            text = text.replace(new RegExp('[ç]', 'gi'), 'c');
+            text = text.replace(new RegExp('[Ə]', 'gi'), 'e');
+            text = text.replace(new RegExp('[ə]', 'gi'), 'e');
+            text = text.replace(new RegExp('[I]', 'gi'), 'i');
+            text = text.replace(new RegExp('[ı]', 'gi'), 'i');
+            text = text.replace(new RegExp('[Ğ]', 'gi'), 'g');
+            text = text.replace(new RegExp('[ğ]', 'gi'), 'g');
+            text = text.replace(new RegExp('[Ş]', 'gi'), 'sh');
+            text = text.replace(new RegExp('[ş]', 'gi'), 'sh');
+            return text;
+        };
+        String.prototype.slugify = function () {
+            return this.toString().toLowerCase().removeAcento().trim()
+                .replace(/\s+/g, '-')           // Replace spaces with -
+                .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                .replace(/^-+/, '')             // Trim - from start of text
+                .replace(/-+$/, '');            // Trim - from end of text
+        };
+        $("input[data-type='slug-source']").blur(function () {
+            $("input[data-type='slug-input']").val($(this).val().slugify());
+        });
+    </script>
+}
