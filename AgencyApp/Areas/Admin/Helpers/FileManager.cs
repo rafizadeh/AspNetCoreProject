@@ -10,25 +10,23 @@ namespace AgencyApp.Areas.Admin.Helpers
 {
     public class FileManager
     {
-        private readonly IHostingEnvironment _env;
-        public FileManager(IHostingEnvironment env)
-        {
-            _env = env;
-        }
 
-
-        //public static string Upload(IFormFile File, string _path)
+        //public static string Upload(IFormFile file, string _path)
         //{
-        //    string filename = DateTime.Now.ToString("yyyyMMddHHmmssfff") + File.FileName;
-        //    string path = Path.Combine(HttpContext.Current.Server.MapPath($"~/Uploads/{_path}/"), filename);
-        //    File.SaveAs(path);
+        //    string filename = Path.GetFileName(file.FileName);
+        //    string path = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\Uploads", filename);
+
+        //    using (var stream = new FileStream(path, FileMode.Create))
+        //    {
+        //        file.CopyToAsync(stream);
+        //    }
 
         //    return filename;
         //}
 
         //public static void Delete(string filename, string _path)
         //{
-        //    string path = Path.Combine(HttpContext.Current.Server.MapPath($"~/Uploads/{_path}/"), filename);
+        //    string path = Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\Uploads", filename);
 
         //    if (File.Exists(path))
         //    {
